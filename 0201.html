@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Happy Birthday!</title>
+        <link rel="icon" href="confetti.png" type="image/x-icon">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@100;400;700&display=swap');
+            body { margin: 0; background: #0e0e2c; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+            #cake { position: relative; transition: 0.5s ease; }
+            .thecake { position: absolute; background: pink; width: 300px; height: 150px; transform: translate(-50%, -80%); border-radius: 30px 30px 0 0; }
+            .thecake:after { position: absolute; width: 300px; height: 10px; background: #bf92de; content: ""; top: 50px; box-shadow: 0px 50px #9c7491; }
+            .topping { position: absolute; width: 300px; height: 30px; background: #d996d8; transform: translate(-50%, -120px); border-radius: 30px 30px 0 0; z-index: 1; }
+            .topping:after { position: absolute; width: 20px; height: 30px; border-radius: 20px; content: ""; box-shadow: 15px 15px #d996d8, 40px 10px #d996d8; }
+            .plate { position: absolute; width: 350px; height: 10px; background: #eceaea; transform: translate(-50%, 30px); border-radius: 0 0 10px 10px; }
+            .candle { position: absolute; width: 20px; height: 50px; background: repeating-linear-gradient(#fff, #fff 10px, #a96767 10px, #a96767 15px); transform: translate(-50%, -170px); border-radius: 10px 10px 0 0; cursor: pointer; }
+            .candle:after { position: absolute; background: #fcca46; width: 20px; height: 20px; content: ""; border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%; transform: rotate(-45deg); bottom: 50px; animation: light 1.3s ease infinite; transition: 1s; opacity: 1; }
+            @keyframes light {
+                0% { opacity: 1; }
+                50% { opacity: 0.7; border-radius: 80% 50% 55% 50% / 55% 50% 80% 50%; }
+                100% { opacity: 1; }
+            }
+            .text { position: relative; color: #fff; font-weight: bold; top: 80px; font-size: 30px; right: 30px; opacity: 0; transition: 1s; font-family: "Lato"; }
+            .arrow { cursor: pointer; text-align: center; }
+            .hbd { position: absolute; opacity: 0; transition: 0.5s ease; color: #fff; display: grid; transform: translate(-15%, -40%); grid-template-columns: 1fr 200px; }
+            .roundnround { border: 3px solid pink; border-radius: 100%; width: 50px; height: 50px; }
+            .roundnround:after { content: "🥳"; font-size: 35px; }
+            .write { background: pink; padding: 20px; height: 100px; color: #292929; border-radius: 20px; font-size: 12px; overflow-y: auto; text-align: justify; font-family: "Poppins"; }
+            a:link, a:visited, a:active { font-weight: bold; color:#292929; }
+            </style>
+            <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+            <script src="//pull.cappuccicons.com/cpf.js"></script>
+            <script>
+            $(document).ready(function() {
+                var addRule = (function (style) {
+    var sheet = document.head.appendChild(style).sheet;
+    return function (selector, css) {
+        var propText = typeof css === "string" ? css : Object.keys(css).map(function (p) {
+            return p + ":" + (p === "content" ? "'" + css[p] + "'" : css[p]);
+        }).join(";");
+        sheet.insertRule(selector + "{" + propText + "}", sheet.cssRules.length);
+    };
+})(document.createElement("style"));
+            $(".candle").click(function() {
+               $("#cake").css("filter", "brightness(0.5)");
+               addRule(".candle:after", {
+                   animation: "none",
+                   opacity: "0",
+                   transition: "1s"
+               });
+               confetti();
+               $(".text").css("opacity", "1");
+            });
+            $(".arrow").click(function() {
+               $("#cake").animate({ 
+                  right: "600px" 
+               });
+               $(".hbd").css("opacity", "1");
+               $(this).css("opacity", "0");
+            });
+            });</script>
+    </head>
+    <body>
+        <div id="cake">
+            <div class="candle"></div>
+            <div class="topping"></div>
+            <div class="thecake"></div>
+            <div class="plate"></div>
+        </div>
+            <div class="hbd">
+                <div class="roundnround"></div>
+                <div class="write"><div style="font-family: Lato; font-size: 15px; text-align: center; font-weight: bold">Happiest Birthday!</div>Best wishes on your nineteen. Hope the cake's delicious enough for you, as I am not a decent cook nor a decent baker like you. I oftentimes burn my omelettes too... but nevermind, we're not talking about any burnt omelettes here.<br><br>I'm making you this as a birthday present: <a href="https://open.spotify.com/playlist/2Qj7XzhKmkEMCRzq9c6AMf?si=wP4Q8O06Rd64zsmjbGAB8g&utm_source=copy-link" target="_blank">[click click!]</a><br><br>And it is a one day one song playlist! (＠＾０＾) There are currently 45 songs in the playlist, I'll start adding a song to it today.<br><br>There's one other present that I want to give you, but I'm not finished making it yet.... so (´。＿。｀) I'll finish it ASAP though! Can't promise you when but I surely will send it to you the very moment I'm done making it.<br><br>Anyway, enjoy your special day. Have a great day ahead, sending lots of love. ❤</div>
+            </div>
+        <div class="text">Yay!
+        <div class="arrow"><i class="cp cp-arrow-right"></i></div></div>
+    </body>
+</html>
