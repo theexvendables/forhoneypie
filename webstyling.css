@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@100;400;700&display=swap');
+body { margin-top: 0; background-color: #efdecd; background: #efdecd; color: #000; font-family: Lato; }
+p { font-family: Lato; font-size: 13px; line-height: 15pt; text-align: justify; }
+textarea { border: 1px solid #eceaea; width: 500px; height: 200px; display: block; margin: 0 auto; font-family: "Poppins"; }
+.title { font-family: Poppins; font-weight: 700; text-shadow: 3px 3px #ddd7d7, 3px 5px beige; color: #a58484; font-size: 20px; }
+.container { background: #fff; margin: 50px auto 30px; width: 900px; padding: 5px 15px; height: 100%; border-radius: 10px; border: 2px solid #8b6767; }
+.teehee { font-size: 10px; }
+.startoggle:before { content:'\ec9b'; font-family:'cappuccicons'; position: absolute; margin-left: 150px; font-size: 30px; margin-top: -15px; color: #a58484; text-shadow: 3px 1px beige; transform: rotate(45deg); }
+a { cursor: pointer; font-weight: bold; color: #a58484; }
+input[type="radio"] { cursor: pointer; vertical-align: baseline; }
+label { display: inline-block; }
+#story { border: 1px solid #eceaea; width: 500px; height: 200px; display: block; margin: 0 auto; font-family: "Poppins"; }
+table { width: 900px; }
